@@ -11,7 +11,7 @@
     @apply fixed top-0 left-0 z-20 w-full px-4 py-4 flex justify-center;
   }
   .navbar-container {
-    @apply px-2 py-2 flex flex-wrap justify-center gap-4 rounded-xl lg:rounded-full backdrop-blur-sm bg-slate-950 !bg-opacity-75 border border-slate-700 outline-none;
+    @apply px-2 py-2 flex flex-wrap justify-center gap-2 gap-x-4 rounded-xl lg:rounded-full backdrop-blur-sm bg-slate-950 !bg-opacity-75 border border-slate-700 outline-none;
     animation: slideInUp 300ms ease-out;
   }
 
@@ -46,7 +46,7 @@
   sections.forEach(sec => {
     const rect = sec.getBoundingClientRect();
 
-    if (rect.top <= 50 && rect.bottom >= 50) {
+    if (rect.top <= 96 && rect.bottom >= 96) {
       navLinks.forEach(link => {
         link.classList.remove('active');
       });
