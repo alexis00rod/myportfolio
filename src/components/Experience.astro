@@ -23,7 +23,7 @@ const EXPERIENCE = [
   <div class="w-full py-8 relative flex flex-col items-center gap-4">
     <div class="-z-10 absolute top-0 left-0 lg:left-1/2 lg:-translate-x-1/2 w-14 h-full flex justify-center"><div class="h-full w-2 bg-slate-300/25 rounded-full"></div></div>
     {EXPERIENCE.map((e,i) => (
-      <div class={`w-full flex ${i % 2 === 0 && 'flex-row-reverse'} gap-4`}>
+      <div class={`w-full flex ${i % 2 === 0 && 'lg:flex-row-reverse'} gap-4`}>
         <div class={`w-1/2 h-14 hidden lg:flex items-center ${i % 2 !== 0 && 'justify-end'}`}>
           <span class="text-white/75 font-light">{e.date}</span>
         </div>
