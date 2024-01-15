@@ -1,8 +1,46 @@
-<header class="fixed top-0 left-0 z-20 w-full px-4 py-4 flex justify-center">
-  <nav class="px-2 py-2 flex flex-wrap justify-center gap-4 rounded-xl lg:rounded-full backdrop-blur-sm bg-slate-950 !bg-opacity-75 border border-slate-700">
-    <a href="#" class="h-12 px-4 flex items-center justify-center bg-slate-800 border border-slate-700 rounded-full">Inicio</a>
-    <a href="#proyectos" class="h-12 px-4 flex items-center justify-center text-white/75 duration-150 hover:text-white">Proyectos</a>
-    <a href="#habilidades" class="h-12 px-4 flex items-center justify-center text-white/75 duration-150 hover:text-white">Habilidades</a>
-    <a href="#experiencia" class="h-12 px-4 flex items-center justify-center text-white/75 duration-150 hover:text-white">Experiencia</a>
+<header class="navbar ">
+  <nav class="navbar-container">
+    <a href="#inicio" class="navbar-link active">Inicio</a>
+    <a href="#proyectos" class="navbar-link">Proyectos</a>
+    <a href="#habilidades" class="navbar-link">Habilidades</a>
+    <a href="#experiencia" class="navbar-link">Experiencia</a>
   </nav>
 </header>
+<style is:global>
+  .navbar {
+    @apply fixed top-0 left-0 z-20 w-full px-4 py-4 flex justify-center;
+  }
+  .navbar-container {
+    @apply px-2 py-2 flex flex-wrap justify-center gap-4 rounded-xl lg:rounded-full backdrop-blur-sm bg-slate-950 !bg-opacity-75 border border-slate-700;
+  }
+  .navbar-link {
+    @apply h-12 px-4 flex items-center justify-center text-white/75 duration-150 outline-none hover:text-white
+  }
+  .active {
+    @apply text-white bg-slate-800 border border-slate-700 rounded-full
+  }
+</style>
+<script>
+
+const sections = document.querySelectorAll('section')
+const navLinks = document.querySelectorAll('.navbar-link')
+
+window.onscroll = () => {
+  sections.forEach(sec => {
+    let top = window.scrollY
+    let offset = sec.offsetTop
+    let height = sec.offsetHeight
+    let id = sec.getAttribute('id')
+
+    if (top >= offset && top < offset + height) {
+      navLinks.forEach(link => {
+        link.classList.remove('active')
+      })
+      let correspondingLink = document.querySelector(`.navbar-link[href*='${id}']`);
+      if (correspondingLink) {
+        correspondingLink.classList.add('active');
+      }
+    }
+  })
+}
+</script>
