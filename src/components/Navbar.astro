@@ -27,33 +27,35 @@
   }
 
   .navbar-link {
-    @apply h-12 px-4 flex items-center justify-center text-white/75 hover:text-white
+    @apply relative h-12 px-4 flex items-center  text-white/75 duration-150 hover:text-white
   }
   .active {
-    @apply outline-none text-white bg-slate-800 border border-slate-700 rounded-full
+    @apply relative text-white
   }
+  .active::after {
+    content: '';
+    @apply absolute top-0 left-0 -z-10 w-full h-full bg-slate-800 border border-slate-700 rounded-full
+  }
+
 </style>
 <script>
+  document.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.navbar-link');
 
-const sections = document.querySelectorAll('section')
-const navLinks = document.querySelectorAll('.navbar-link')
-
-window.onscroll = () => {
   sections.forEach(sec => {
-    let top = window.scrollY
-    let offset = sec.offsetTop
-    let height = sec.offsetHeight
-    let id = sec.getAttribute('id')
+    const rect = sec.getBoundingClientRect();
 
-    if (top >= offset && top < offset + height) {
+    if (rect.top <= 50 && rect.bottom >= 50) {
       navLinks.forEach(link => {
-        link.classList.remove('active')
-      })
-      let correspondingLink = document.querySelector(`.navbar-link[href*='${id}']`);
+        link.classList.remove('active');
+      });
+
+      const correspondingLink = document.querySelector(`.navbar-link[href*='${sec.id}']`);
       if (correspondingLink) {
         correspondingLink.classList.add('active');
       }
     }
-  })
-}
+  });
+});
 </script>
