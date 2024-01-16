@@ -1,0 +1,54 @@
+---
+import { PROJECTS } from "../../data/projects";
+import Layout from "../../layouts/Layout.astro";
+import Section from '../../components/Section.astro'
+
+export const getStaticPaths = async () => {
+  return PROJECTS.map(project => ({
+    params: {id: project.id.toString()},
+    props: {project}
+  }));
+}
+
+const {project: {id, name, image, description,stacks, demo, repository}} = Astro.props
+
+---
+<Layout title="Rodrigo Ruiz Diaz" description="">
+  <main class="w-full max-w-screen-lg mx-auto flex flex-col">
+    <a href="/#proyectos" class="fixed top-8 left-8 px-4 h-14 flex items-center justify-center text-white/75 gap-4 text-xl rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
+      <i class="fa-solid fa-arrow-left"></i>
+      <span class="text-base">Volver</span>
+    </a>
+    <Section id={id} title={name}>
+      <div class="w-full flex flex-col items-center gap-8">
+        <div class="debug flex flex-col gap-4">
+          <h3 class="debug text-center">Capturas</h3>
+          <img src={image} alt={name} />
+        </div>
+        <div class="debug flex flex-col gap-4">
+          <h3 class="debug text-center">Descripcion</h3>
+          <p>{description}</p>
+        </div>
+        <div class="debug flex flex-col gap-4">
+          <h3 class="debug text-center">Tecnologias</h3>
+          <ul class="flex flex-wrap gap-4">
+            {stacks && stacks.map(stack => <li class="h-12 px-6 flex items-center text-white/75 rounded-xl bg-slate-950 border border-slate-800 capitalize">{stack}</li>)}
+          </ul>
+        </div>
+        <div class="debug flex flex-col gap-4">
+          <h3 class="debug text-center">Links</h3>
+          <div class="debug flex gap-4">
+            <a href={demo} target="_blank" rel="noopener noreferrer" class="px-4 h-14 flex items-center justify-center text-white/75 gap-4 text-xl rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
+              <i class="fa-solid fa-globe"></i>
+              <span class="text-base">Visitar pagina web</span>
+            </a>
+            <a href={repository} target="_blank" rel="noopener noreferrer" class="px-4 h-14 flex items-center justify-center text-white/75 gap-4 text-xl rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
+              <i class="fa-brands fa-github"></i>
+              <span class="text-base">Ver repositorio</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </Section>
+  </main>
+</Layout>
