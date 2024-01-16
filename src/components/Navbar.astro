@@ -1,5 +1,5 @@
 <header class="navbar ">
-  <nav class="navbar-container">
+  <nav class="navbar-container animate__animated animate__bounceInDown">
     <a href="#inicio" class="navbar-link active">Inicio</a>
     <a href="#proyectos" class="navbar-link">Proyectos</a>
     <a href="#habilidades" class="navbar-link">Habilidades</a>
@@ -12,20 +12,8 @@
   }
   .navbar-container {
     @apply px-2 py-2 flex flex-wrap justify-center gap-2 gap-x-4 rounded-xl lg:rounded-full backdrop-blur-sm bg-slate-950 !bg-opacity-75 border border-slate-700 outline-none;
-    animation: slideInUp 300ms ease-out;
   }
-
-  @keyframes slideInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(-100%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
+  
   .navbar-link {
     @apply relative h-12 px-4 flex items-center  text-white/75 duration-150 hover:text-white
   }
@@ -34,9 +22,8 @@
   }
   .active::after {
     content: '';
-    @apply absolute top-0 left-0 -z-10 w-full h-full bg-slate-800 border border-slate-700 rounded-full
+    @apply absolute top-0 left-0 -z-10 w-full h-full bg-slate-800 border border-slate-700 rounded-full;
   }
-
 </style>
 <script>
   document.addEventListener('scroll', () => {
@@ -46,7 +33,7 @@
   sections.forEach(sec => {
     const rect = sec.getBoundingClientRect();
 
-    if (rect.top <= 96 && rect.bottom >= 96) {
+    if (rect.top <= 80 && rect.bottom >= 80) {
       navLinks.forEach(link => {
         link.classList.remove('active');
       });
