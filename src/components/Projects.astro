@@ -1,62 +1,15 @@
 ---
 import Section from "./Section.astro"
-
-const PROJECTS = [
-  {
-      id:"dailyplanner",
-      name:"DailyPlanner",
-      image:"https://i.ibb.co/9W3Qn5k/dailyplanner-1.jpg",
-      description:"fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia at quis risus sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque in dictum non consectetur a erat nam at lectus urna duis convallis convallis tellus id interdum velit laoreet id donec ultrices tincidunt",
-      stacks:["react", "firebase","tailwindcss"],
-      demo:"https://dailyplanner-app.netlify.app/",
-      repository:"https://github.com/alexis00rod/DailyPlanner"
-  },
-  {
-    id:"animecatalog",
-    name:"AnimeCatalog",
-    image:"https://i.ibb.co/FDGRKsf/animecatalog-1.jpg",
-    description:"fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia at quis risus sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque in dictum non consectetur a erat nam at lectus urna duis convallis convallis tellus id interdum velit laoreet id donec ultrices tincidunt",
-    stacks:["react", "tailwindcss"],
-    demo:"https://animecatalog.netlify.app/",
-    repository:"https://github.com/alexis00rod/AnimeCatalog"
-  },  {
-    id:"frimarket",
-    name:"FRIMarket",
-    image:"https://i.ibb.co/8z5DyX2/frimarket-1.jpg",
-    description:"fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia at quis risus sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque in dictum non consectetur a erat nam at lectus urna duis convallis convallis tellus id interdum velit laoreet id donec ultrices tincidunt",
-    stacks:["react", "firebase", "tailwindcss"],
-    demo:"https://frimarket.netlify.app/",
-    repository:"https://github.com/alexis00rod/FRIMarket"
-  }
-]
+import { PROJECTS } from '../data/projects.js'
 ---
 <Section id="proyectos" title="Proyectos">
-  <div class="w-full flex flex-col">
-    {PROJECTS.map((e,i) => (
-      <div class={`w-full flex ${i % 2 === 0 && 'lg:flex-row-reverse'} gap-4`}>
-        <picture class="debug w-1-2 h-60">
-          <img src={e.image} alt={e.name} class=" object-cover object-top"/>
-          </picture>
-        <div class="debug grow">
-          <h3 class="text-lg font-medium">{e.name}</h3>
-          <p class="text-white/75 line-clamp-3">{e.description}</p>
-          <ul>
-            
-          </ul>
-        </div>
-      </div>
+  <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {PROJECTS.map(project => (
+    <a href={`project/${project.id}`} class="px-4 py-4 flex flex-col gap-4 bg-slate-950 border border-slate-700 rounded-md duration-150 hover:scale-105">
+      <img src={project.image} alt={project.name} class="w-full h-56 lg:h-48 object-cover object-top rounded-md" />
+      <h3 class="text-lg font-medium line-clamp-1">{project.name}</h3>
+      <p class="text-white/75 line-clamp-3">{project.description}</p>
+    </a>
     ))}
-    <!-- {PROJECTS.map(project => (
-      <div class="w-full flex flex-col bg-slate-950 border border-slate-700 rounded-md overflow-hidden">
-        <img src={project.image} alt={project.name} class="h-48" />
-        <div class="w-full px-4 py-4 flex flex-col">
-          <h3 class="mb-3 text-lg font-medium">{project.name}</h3>
-          <p class="mb-2 w-full text-white/75 line-clamp-3">{project.description}</p>
-          <ul class="w-full flex flex-wrap gap-2">
-            {project.stacks.map(stack => <li class="text-sm capitalize">{stack}</li>)}
-          </ul>
-        </div>
-      </div>
-    ))} -->
   </div>
 </Section>
