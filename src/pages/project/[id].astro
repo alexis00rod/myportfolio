@@ -10,34 +10,35 @@ export const getStaticPaths = async () => {
   }));
 }
 
-const {project: {id, name, image, description,stacks, demo, repository}} = Astro.props
+const {project: {id, name, image, subtitle, description,stacks, demo, repository}} = Astro.props
 
 ---
 <Layout title="Rodrigo Ruiz Diaz" description="">
   <main class="w-full max-w-screen-lg mx-auto flex flex-col">
-    <a href="/#proyectos" class="fixed top-8 left-8 px-4 h-14 flex items-center justify-center text-white/75 gap-4 text-xl rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
+    <a href="/#proyectos" class="fixed top-4 left-4 px-4 h-14 flex items-center justify-center text-white/75 gap-4 text-xl rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
       <i class="fa-solid fa-arrow-left"></i>
       <span class="text-base">Volver</span>
     </a>
     <Section id={id} title={name}>
       <div class="w-full flex flex-col items-center gap-8">
-        <div class="debug flex flex-col gap-4">
-          <h3 class="debug text-center">Capturas</h3>
-          <img src={image} alt={name} />
+        <h4>{subtitle}</h4>
+        <div class="flex flex-col gap-4">
+          <h3>Capturas</h3>
+          <img src={image} alt={name} class="h-96 object-cover object-top" />
         </div>
-        <div class="debug flex flex-col gap-4">
-          <h3 class="debug text-center">Descripcion</h3>
+        <div class="flex flex-col gap-4">
+          <h3>Descripcion</h3>
           <p>{description}</p>
         </div>
-        <div class="debug flex flex-col gap-4">
-          <h3 class="debug text-center">Tecnologias</h3>
-          <ul class="flex flex-wrap gap-4">
+        <div class="flex flex-col gap-4">
+          <h3>Tecnologias</h3>
+          <ul class="w-full flex justify-center flex-wrap gap-2 gap-x-4">
             {stacks && stacks.map(stack => <li class="h-12 px-6 flex items-center text-white/75 rounded-xl bg-slate-950 border border-slate-800 capitalize">{stack}</li>)}
           </ul>
         </div>
-        <div class="debug flex flex-col gap-4">
-          <h3 class="debug text-center">Links</h3>
-          <div class="debug flex gap-4">
+        <div class="flex flex-col gap-4">
+          <h3>Links</h3>
+          <div class="w-full flex justify-center flex-wrap gap-2 gap-x-4">
             <a href={demo} target="_blank" rel="noopener noreferrer" class="px-4 h-14 flex items-center justify-center text-white/75 gap-4 text-xl rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
               <i class="fa-solid fa-globe"></i>
               <span class="text-base">Visitar pagina web</span>
@@ -52,3 +53,14 @@ const {project: {id, name, image, description,stacks, demo, repository}} = Astro
     </Section>
   </main>
 </Layout>
+<style is:global>
+  h3 {
+    @apply px-2 py-2 mb-2 text-center text-2xl font-medium 
+  }
+  h4 {
+    @apply text-center text-white/75 text-lg
+  }
+  p {
+    @apply text-sm text-white/75 text-center
+  }
+</style>
