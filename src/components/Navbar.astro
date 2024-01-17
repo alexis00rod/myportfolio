@@ -8,14 +8,17 @@
 </header>
 <style is:global>
   .navbar {
-    @apply fixed top-0 left-0 z-20 w-full px-4 py-4 flex justify-center;
+    @apply fixed top-0 left-1/2 -translate-x-1/2 z-20 w-full p-2
+    backdrop-blur-sm bg-slate-950 !bg-opacity-75 shadow-xl
+    sm:top-4 sm:w-max sm:rounded-xl
+    lg:rounded-full
   }
   .navbar-container {
-    @apply px-2 py-2 flex flex-wrap justify-center gap-2 gap-x-4 rounded-xl lg:rounded-full backdrop-blur-sm bg-slate-950 !bg-opacity-75 border border-slate-700 outline-none;
+    @apply flex justify-center items-center flex-wrap gap-x-2 gap-y-1 
   }
   
   .navbar-link {
-    @apply relative h-12 px-4 flex items-center  text-white/75 duration-150 hover:text-white
+    @apply relative px-4 py-2 flex items-center font-medium text-white/75 duration-150 hover:text-white
   }
   .active {
     @apply relative text-white
