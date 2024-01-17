@@ -3,13 +3,21 @@ import Section from "./Section.astro"
 import { PROJECTS } from '../data/projects.js'
 ---
 <Section id="proyectos" title="Proyectos">
-  <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    {PROJECTS.map(project => (
-    <a href={`project/${project.id}`} class="px-4 py-4 flex flex-col gap-4 bg-slate-950 border border-slate-700 rounded-md duration-150 hover:scale-105">
-      <img src={project.image} alt={project.name} class="w-full h-56 lg:h-48 object-cover object-top rounded-md" />
-      <h3 class="text-lg font-medium line-clamp-1">{project.name}</h3>
-      <p class="text-white/75 line-clamp-3">{project.description}</p>
+  {PROJECTS.map((project, i) => (
+    <a href={`/project/${project.id}`} data-aos="zoom-in-up" class="relative w-full sm:h-80 flex bg-slate-950 rounded-lg border border-slate-700 overflow-hidden">
+      <div class="sm:max-w-[50%] h-full pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 flex flex-col">
+        <h3 class="text-2xl font-semibold">{project.name}</h3>
+        <p class="mt-2 text-white/75 line-clamp-3">{project.description}</p>
+        <ul class="mt-4 sm:mt-auto flex flex-wrap gap-x-2 gap-y-1">
+          {project.stacks.map(stack => <li class="px-3 py-1 bg-slate-700 text-xs uppercase rounded-full">{stack}</li>)}
+        </ul>
+      </div>
+      <img src={project.image} alt={project.name} class="absolute top-8 -right-40 w-96 hidden sm:block rounded-t-lg shadow-2xl duration-150" />
     </a>
-    ))}
-  </div>
+  ))}
 </Section>
+<style>
+  a:hover img {
+    @apply scale-105 -rotate-2
+  }
+</style>
