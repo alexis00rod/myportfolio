@@ -1,10 +1,7 @@
 ---
 import Section from "./Section.astro"
 import { PROJECTS } from '../data/projects.js'
-
-function isEven(pos) {
-    return pos % 2 === 0;
-}
+import { isEven } from "../data/utils"
 ---
 <Section id="proyectos" title="Proyectos">
   {PROJECTS.map((project, i) => (
