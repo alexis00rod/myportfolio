@@ -1,14 +1,11 @@
 ---
+import { SKILLS } from "../data/skills"
 import Section from "./Section.astro"
-
-const SKILLS = [
-  'HTML','CSS','Bootstrap','Javascript','Git','Github','Tailwind CSS','SASS','React','Firebase','Typescript','Astro','Nodejs'
-]
 ---
 <Section id="habilidades" title="Habilidades">
-  <ul class="relative w-full flex justify-center flex-wrap gap-4">
+  <ul class="relative w-full flex justify-center flex-wrap gap-2">
     {SKILLS.map((skill, i) => 
-      <li data-aos='fade-right' data-aos-delay={50 * i} class="h-12 px-6 flex items-center text-white/75 rounded-xl bg-slate-950 border border-slate-800">
+      <li data-aos='fade-right' data-aos-delay={50 * i} class="px-6 py-3 flex items-center text-lg text-white/75 rounded-xl bg-slate-950 border border-slate-700">
         {skill}
       </li>
     )}
