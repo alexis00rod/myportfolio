@@ -1,4 +1,4 @@
-<header class="navbar ">
+<header class="navbar">
   <nav class="navbar-container animate__animated animate__bounceInDown">
     <a href="/#inicio" class="navbar-link active">Inicio</a>
     <a href="/#proyectos" class="navbar-link">Proyectos</a>
@@ -8,15 +8,15 @@
 </header>
 <style is:global>
   .navbar {
-    @apply fixed top-0 left-1/2 -translate-x-1/2 z-20 w-full p-2
-    backdrop-blur-sm bg-slate-950 !bg-opacity-75 shadow-xl
-    sm:top-4 sm:w-max sm:rounded-xl
-    lg:rounded-full
+    @apply fixed top-0 left-0 z-20 w-full
+    sm:top-4 sm:left-4
   }
   .navbar-container {
-    @apply flex justify-center items-center flex-wrap gap-x-2 gap-y-1 
+    @apply w-full p-2 mx-auto flex justify-center items-center flex-wrap gap-x-2 gap-y-1 
+    backdrop-blur-sm bg-slate-950 !bg-opacity-75 shadow-xl
+    sm:w-max sm:rounded-xl
+    lg:rounded-full
   }
-  
   .navbar-link {
     @apply relative px-4 py-2 flex items-center font-medium text-white/75 duration-150 hover:text-white
   }
