@@ -1,14 +1,14 @@
-<section id="inicio" class="intro">
-  <picture class="intro-photo animate__animated animate__bounceIn">
-    <img src="/photo.jpg" alt="Rodrigo Ruiz Diaz" class="">
-    <span class="animate__animated animate__wobble">👋</span>
+<section id="inicio" class="intro relative min-h-screen max-w-screen-md mx-auto flex flex-col items-center justify-center text-center scroll-mt-32">
+  <picture class="relative size-28 mb-4 p-1.5 bg-slate-950 rounded-full shadow-xl animate__animated animate__bounceIn">
+    <img src="/photo.jpg" alt="Rodrigo Ruiz Diaz" class="w-full h-full object-cover rounded-full">
+    <span class="absolute right-1 bottom-1 text-3xl animate__animated animate__wobble">👋</span>
   </picture>
-  <h1 class="intro-title animate__animated animate__bounceIn">
+  <h1 class="px-4 py-2 mb-8 text-2xl font-medium animate__animated animate__bounceIn">
     <span class="font-bold">¡Hola! Me llamo Rodrigo.</span> Soy 
     <span class="font-bold">Desarrollador Web Frontend</span> especializado en 
     <span class="underline">React</span>. Disfruto de crear sitios y aplicaciones web atractivas y funcionales.
   </h1>
-  <div class="intro-socials animate__animated animate__bounceIn">
+  <div class="w-full p-2 flex flex-wrap justify-center gap-2 animate__animated animate__bounceIn">
     <a href="/RodrigoRuizDiaz-CV.pdf" target="_blank" rel="noopener noreferrer" class="px-6 h-12 flex flex-none items-center justify-center text-white/75 gap-2 rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
       <span>Descargar CV</span>
       <i class="fa-solid fa-download"></i>
@@ -21,23 +21,3 @@
     </a>
   </div>
 </section>
-<style>
-  .intro {
-    @apply relative max-w-screen-md mt-32 mx-auto flex flex-col items-center justify-center text-center scroll-mt-32
-  }
-  .intro-photo {
-    @apply relative size-28 mb-4 p-1.5 bg-slate-950 rounded-full shadow-xl
-  }
-  .intro-photo img {
-    @apply w-full h-full object-cover rounded-full
-   }
-  .intro-photo span {
-    @apply absolute right-1 bottom-1 text-3xl
-  }
-  .intro-title {
-    @apply px-4 py-2 mb-8 text-2xl font-medium
-  }
-  .intro-socials {
-    @apply w-full p-2 flex flex-wrap justify-center gap-2
-  }
-</style>
