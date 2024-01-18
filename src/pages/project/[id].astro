@@ -1,7 +1,6 @@
 ---
 import { PROJECTS } from "../../data/projects";
 import Layout from "../../layouts/Layout.astro";
-import Section from '../../components/Section.astro'
 
 export const getStaticPaths = async () => {
   return PROJECTS.map(project => ({
@@ -10,7 +9,7 @@ export const getStaticPaths = async () => {
   }));
 }
 
-const {project: {id, name, image, subtitle, description,stacks, demo, repository}} = Astro.props
+const {project: {id, name, images, subtitle, description,process,stacks, demo, repository}} = Astro.props
 
 ---
 <Layout title="Rodrigo Ruiz Diaz" description="">
@@ -24,11 +23,16 @@ const {project: {id, name, image, subtitle, description,stacks, demo, repository
       <h3>{subtitle}</h3>
       <div class="mb-16 flex flex-col">
         <h2>Capturas</h2>
-        <img src={image} alt={name} class="w-full sm:w-auto sm:h-96 object-cover object-top" />
+        <div class="w-full flex gap-2 overflow-x-scroll">
+          {images && images.map(img => <img src={img} alt={name} class="w-full sm:w-auto sm:h-96 object-cover object-top" />)}
+        </div>
       </div>
       <div class="mb-16 flex flex-col">
         <h2>Descripcion</h2>
-        <p>{description}</p>
+        <div class="max-w-2xl flex flex-col gap-2">
+          {description && description.map(desp => <p>{desp}</p>)}
+          <p>{process}</p>
+        </div>
       </div>
       <div class="mb-16 flex flex-col">
         <h2>Tecnologias</h2>
@@ -77,6 +81,6 @@ const {project: {id, name, image, subtitle, description,stacks, demo, repository
     @apply mb-8 text-white/75 text-lg
   }
   p {
-    @apply mb-8 text-sm text-white/75 text-center
+    @apply text-white/90 text-center last:mt-4 last:text-sm last:text-white/75
   }
 </style>
