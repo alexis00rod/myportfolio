@@ -3,32 +3,26 @@ export const PROJECTS = [
     id:"dailyplanner",
     name:"DailyPlanner",
     images:[
-      "https://i.ibb.co/9W3Qn5k/dailyplanner-1.jpg"
+      "https://i.ibb.co/58qhhDm/dailyplanner1.jpg",
+      "https://i.ibb.co/StsLnyj/dailyplanner2.jpg",
+      "https://i.ibb.co/nk7BpmV/dailyplanner3.jpg",
+      "https://i.ibb.co/Js3gpZ6/dailyplanner4.jpg",
+      "https://i.ibb.co/YL3dcz1/dailyplanner5.jpg",
+      "https://i.ibb.co/6bKQY7m/dailyplanner6.jpg"
     ],
-    subtitle: "facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui",
+    subtitle: "Crea y organiza tus tareas fácilmente, clasificándolas por fecha y categoría.",
     description:[
-      "fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia at quis risus sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque in dictum non consectetur a erat nam at lectus urna duis convallis convallis tellus id interdum velit laoreet id donec ultrices tincidunt"
+      "Bienvenido a DailyPlanner, la aplicación que simplifica tu vida al máximo.",
+      "Crea y organiza tus tareas fácilmente, clasificándolas por fecha y categoría.",
+      "Con una interfaz intuitiva, garantizamos que tus días sean más productivos y organizados.", 
+      "¡Optimiza tu rutina con DailyPlanner y da el primer paso hacia una gestión eficiente!"
     ],
-    process: "",
+    process: "DailyPlanner es una app web creada con ReactJS, Tailwind CSS y Firebase. Con diseño receptivo y Dark Mode opcional, integra Chart.js para gráficos interactivos. Utiliza fuentes de Google Fonts y FontAwesome para una estética atractiva",
     stacks:["react", "firebase","Tailwind CSS"],
     demo:"https://dailyplanner-app.netlify.app/",
     repository:"https://github.com/alexis00rod/DailyPlanner"
   },
   {
-    id:"animecatalog",
-    name:"AnimeCatalog",
-    images:[
-      "https://i.ibb.co/FDGRKsf/animecatalog-1.jpg"
-    ],
-    subtitle: "facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui",
-    description:[
-      "fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia at quis risus sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque in dictum non consectetur a erat nam at lectus urna duis convallis convallis tellus id interdum velit laoreet id donec ultrices tincidunt"
-    ],
-    process: "",
-    stacks:["react", "Tailwind CSS"],
-    demo:"https://animecatalog.netlify.app/",
-    repository:"https://github.com/alexis00rod/AnimeCatalog"
-  },  {
     id:"frimarket",
     name:"FRIMarket",
     images:[
