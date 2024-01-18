@@ -15,52 +15,68 @@ const {project: {id, name, image, subtitle, description,stacks, demo, repository
 ---
 <Layout title="Rodrigo Ruiz Diaz" description="">
   <main>
-    <a href="/#proyectos" class="fixed top-4 left-4 px-4 h-14 flex items-center justify-center text-white/75 gap-4 text-xl rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
+    <a href="/#proyectos" class="fixed top-4 left-4 px-6 h-12 flex flex-none items-center justify-center text-white/75 gap-2 rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
       <i class="fa-solid fa-arrow-left"></i>
       <span class="text-base">Volver</span>
     </a>
-    <Section id={id} title={name}>
-      <div class="w-full flex flex-col items-center gap-8">
-        <h4>{subtitle}</h4>
-        <div class="flex flex-col gap-4">
-          <h3>Capturas</h3>
-          <img src={image} alt={name} class="h-96 object-cover object-top" />
-        </div>
-        <div class="flex flex-col gap-4">
-          <h3>Descripcion</h3>
-          <p>{description}</p>
-        </div>
-        <div class="flex flex-col gap-4">
-          <h3>Tecnologias</h3>
-          <ul class="w-full flex justify-center flex-wrap gap-2 gap-x-4">
-            {stacks && stacks.map(stack => <li class="h-12 px-6 flex items-center text-white/75 rounded-xl bg-slate-950 border border-slate-800 capitalize">{stack}</li>)}
-          </ul>
-        </div>
-        <div class="flex flex-col gap-4">
-          <h3>Links</h3>
-          <div class="w-full flex justify-center flex-wrap gap-2 gap-x-4">
-            <a href={demo} target="_blank" rel="noopener noreferrer" class="px-4 h-14 flex items-center justify-center text-white/75 gap-4 text-xl rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
-              <i class="fa-solid fa-globe"></i>
-              <span class="text-base">Visitar pagina web</span>
-            </a>
-            <a href={repository} target="_blank" rel="noopener noreferrer" class="px-4 h-14 flex items-center justify-center text-white/75 gap-4 text-xl rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
-              <i class="fa-brands fa-github"></i>
-              <span class="text-base">Ver repositorio</span>
-            </a>
-          </div>
+    <section>
+      <h1>{name}</h1>
+      <h3>{subtitle}</h3>
+      <div class="mb-16 flex flex-col">
+        <h2>Capturas</h2>
+        <img src={image} alt={name} class="w-full sm:w-auto sm:h-96 object-cover object-top" />
+      </div>
+      <div class="mb-16 flex flex-col">
+        <h2>Descripcion</h2>
+        <p>{description}</p>
+      </div>
+      <div class="mb-16 flex flex-col">
+        <h2>Tecnologias</h2>
+        <ul class="flex justify-center flex-wrap gap-x-2 gap-y-1">
+          {stacks && stacks.map(stack => <li class="px-6 py-3 flex items-center text-lg text-white/75 rounded-xl bg-slate-950 border border-slate-700 capitalize">{stack}</li>)}
+        </ul>
+      </div>
+      <div class="mb-16 flex flex-col">
+        <h2>Enlaces</h2>
+        <div class="flex justify-center flex-wrap gap-x-2 gap-y-1">
+          <a 
+          href={demo} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="px-6 h-12 flex flex-none items-center justify-center text-white/75 gap-2 rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
+            <i class="fa-solid fa-globe"></i>
+            <span>Visitar pagina web</span>
+          </a>
+          <a 
+          href={repository} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="px-6 h-12 flex flex-none items-center justify-center text-white/75 gap-2 rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
+            <i class="fa-brands fa-github"></i>
+            <span>Ver repositorio</span>
+          </a>
         </div>
       </div>
-    </Section>
+    </section>
   </main>
 </Layout>
-<style is:global>
-  h3 {
-    @apply px-2 py-2 mb-2 text-center text-2xl font-medium 
+<style>
+  section {
+    @apply px-8 my-20 flex flex-col items-center justify-center
   }
-  h4 {
-    @apply text-center text-white/75 text-lg
+  h1,h2,h3 {
+    @apply text-center
+  }
+  h1 {
+    @apply py-2 mb-20 text-5xl font-bold
+  }
+  h2 {
+    @apply mb-8 text-3xl font-medium capitalize text-center
+  }
+  h3 {
+    @apply mb-8 text-white/75 text-lg
   }
   p {
-    @apply text-sm text-white/75 text-center
+    @apply mb-8 text-sm text-white/75 text-center
   }
 </style>
