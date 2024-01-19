@@ -23,9 +23,12 @@ const {project: {id, name, images, subtitle, description,process,stacks, demo, r
       <h3>{subtitle}</h3>
       <div class="mb-16 flex flex-col">
         <h2>Capturas</h2>
-        <div class="w-full flex gap-2 overflow-x-scroll">
-          {images && images.map(img => <img src={img} alt={name} class="w-full sm:w-auto sm:h-96 object-cover object-top" />)}
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          {images && images.map(img => <img src={img} alt={name} class="swiper-slide" />)}
         </div>
+        <div class="swiper-pagination"></div>
+      </div>
       </div>
       <div class="mb-16 flex flex-col">
         <h2>Descripcion</h2>
@@ -65,6 +68,9 @@ const {project: {id, name, images, subtitle, description,process,stacks, demo, r
   </main>
 </Layout>
 <style>
+  :root {
+    --swiper-pagination-color: #06b6d4;
+  }
   section {
     @apply px-8 my-20 flex flex-col items-center justify-center
   }
@@ -83,4 +89,27 @@ const {project: {id, name, images, subtitle, description,process,stacks, demo, r
   p {
     @apply text-white/90 text-center last:mt-4 last:text-sm last:text-white/75
   }
+  .swiper-slide {
+    @apply w-auto h-96 object-cover object-top
+  }
 </style>
+<script>
+
+import Swiper from 'swiper'
+import { Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
+
+const swiper = new Swiper(".swiper", {
+  modules: [Pagination],
+  slidesPerView: 1,
+  spaceBetween: 4,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    640: { slidesPerView: 'auto'},
+  },
+})
+</script>
