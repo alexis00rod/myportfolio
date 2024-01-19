@@ -12,10 +12,13 @@ const {style, href, target} = Astro.props
 </a>
 <style is:global>
   .link {
-    @apply flex flex-none justify-center items-center text-base text-center text-white/75 bg-slate-950 rounded-full border border-slate-700 duration-150 hover:text-white hover:scale-105
+    @apply flex flex-none justify-center items-center text-base text-center font-medium text-slate-800/75 dark:text-slate-200/75 bg-slate-50 dark:bg-slate-950 rounded-full border-2 border-slate-300 dark:border-slate-700 duration-150 hover:text-slate-800 dark:hover:text-slate-200 hover:scale-105
   }
   .link-icon {
     @apply size-12 
+  }
+  .link-icon i {
+    @apply text-lg
   }
   .link-text {
     @apply px-6 h-12 gap-2

@@ -5,7 +5,10 @@ import Section from "./Section.astro"
 <Section id="habilidades" title="Habilidades">
   <ul class="w-full flex justify-center flex-wrap gap-2">
     {SKILLS.map((skill, i) => 
-      <li data-aos='fade-right' data-aos-delay={50 * i} class="px-6 py-3 flex items-center text-lg text-white/75 rounded-xl bg-slate-950 border border-slate-700">
+      <li 
+      data-aos='fade-right' 
+      data-aos-delay={50 * i} 
+      class="px-6 py-3 flex items-center text-lg rounded-xl  bg-slate-50 dark:bg-slate-950 border-2 border-slate-300 dark:border-slate-700">
         {skill}
       </li>
     )}
