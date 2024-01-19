@@ -1,0 +1,26 @@
+---
+interface Props {
+	style: string;
+	href: string;
+	target?: string;
+}
+
+const {style, href, target} = Astro.props
+---
+<a href={href} target={target && target} rel="noopener noreferrer" class={`link link-${style}`}>
+  <slot />
+</a>
+<style is:global>
+  .link {
+    @apply flex flex-none justify-center items-center text-base text-center text-white/75 bg-slate-950 rounded-full border border-slate-700 duration-150 hover:text-white hover:scale-105
+  }
+  .link-icon {
+    @apply size-12 
+  }
+  .link-text {
+    @apply px-6 h-12 gap-2
+  }
+  .link-back {
+    @apply fixed top-4 left-4 z-20 link-text
+  }
+</style>

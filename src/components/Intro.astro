@@ -1,3 +1,7 @@
+---
+import Link from "./Link.astro"
+---
+
 <section id="inicio" class="relative min-h-screen max-w-screen-md mx-auto flex flex-col items-center justify-center text-center scroll-mt-32">
   <picture class="relative size-28 mb-4 p-1.5 bg-slate-950 rounded-full shadow-xl animate__animated animate__bounceIn">
     <img src="/photo.jpg" alt="Rodrigo Ruiz Diaz" class="w-full h-full object-cover rounded-full">
@@ -9,15 +13,15 @@
     <span class="underline">React</span>. Disfruto de crear sitios y aplicaciones web atractivas y funcionales.
   </h1>
   <div class="w-full p-2 flex flex-wrap justify-center gap-2 animate__animated animate__bounceIn">
-    <a href="/RodrigoRuizDiaz-Curriculum.pdf" target="_blank" rel="noopener noreferrer" class="px-6 h-12 flex flex-none items-center justify-center text-white/75 gap-2 rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
+    <Link href="/RodrigoRuizDiaz-Curriculum.pdf" target="_blank" style="text">
       <span>Descargar CV</span>
       <i class="fa-solid fa-download"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/alexis-ruizdiaz-dev/" target="_blank" rel="noopener noreferrer" class="size-12 flex flex-none items-center justify-center text-white/75 text-xl rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
+    </Link>
+    <Link href="https://www.linkedin.com/in/alexis-ruizdiaz-dev/" target="_blank" style="icon">
       <i class="fa-brands fa-linkedin"></i>
-    </a>
-    <a href="https://github.com/alexis00rod" target="_blank" rel="noopener noreferrer" class="size-12 flex flex-none items-center justify-center text-white/75 text-xl rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
+    </Link>
+    <Link href="https://github.com/alexis00rod" target="_blank" style="icon">
       <i class="fa-brands fa-github"></i>
-    </a>
+    </Link>
   </div>
 </section>

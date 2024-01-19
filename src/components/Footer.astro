@@ -1,18 +1,22 @@
+---
+import Link from "./Link.astro"
+---
+
 <footer class="w-full px-8 py-16 flex flex-col items-center justify-center">
   <div class="mx-auto mb-8 text-sm font-light">
     <p class="mb-2 text-center">© Rodrigo Ruiz Diaz. Todos los derechos reservados.</p>
     <p class="text-center">Sitio web construido con Astro 4.0 y Tailwind CSS</p>
   </div>
   <div class="w-full p-2 flex flex-wrap justify-center gap-2">
-    <a href="/RodrigoRuizDiaz-Curriculum.pdf" target="_blank" rel="noopener noreferrer" class="px-6 h-12 flex flex-none items-center justify-center text-white/75 gap-2 rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
+    <Link href="/RodrigoRuizDiaz-Curriculum.pdf" target="_blank" style="text">
       <span>Descargar CV</span>
       <i class="fa-solid fa-download"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/alexis-ruizdiaz-dev/" target="_blank" rel="noopener noreferrer" class="size-12 flex flex-none items-center justify-center text-white/75 text-xl rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
+    </Link>
+    <Link href="https://www.linkedin.com/in/alexis-ruizdiaz-dev/" target="_blank" style="icon">
       <i class="fa-brands fa-linkedin"></i>
-    </a>
-    <a href="https://github.com/alexis00rod" target="_blank" rel="noopener noreferrer" class="size-12 flex flex-none items-center justify-center text-white/75 text-xl rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
+    </Link>
+    <Link href="https://github.com/alexis00rod" target="_blank" style="icon">
       <i class="fa-brands fa-github"></i>
-    </a>
+    </Link>
   </div>
 </footer>

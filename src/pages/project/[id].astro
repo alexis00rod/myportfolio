@@ -1,6 +1,7 @@
 ---
 import { PROJECTS } from "../../data/projects";
 import Layout from "../../layouts/Layout.astro";
+import Link from "../../components/Link.astro";
 
 export const getStaticPaths = async () => {
   return PROJECTS.map(project => ({
@@ -14,10 +15,14 @@ const {project: {id, name, images, subtitle, description,process,stacks, demo, r
 ---
 <Layout title="Rodrigo Ruiz Diaz" description="">
   <main>
-    <a href="/#proyectos" class="fixed top-4 left-4 px-6 h-12 flex flex-none items-center justify-center text-white/75 gap-2 rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
+    <!-- <a href="/#proyectos" class="fixed top-4 left-4 px-6 h-12 flex flex-none items-center justify-center text-white/75 gap-2 rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
       <i class="fa-solid fa-arrow-left"></i>
       <span class="text-base">Volver</span>
-    </a>
+    </a> -->
+    <Link href='/#proyectos' style="back">
+      <i class="fa-solid fa-arrow-left"></i>
+      <span>Volver</span>
+    </Link>
     <section>
       <h1>{name}</h1>
       <h3>{subtitle}</h3>
@@ -46,22 +51,14 @@ const {project: {id, name, images, subtitle, description,process,stacks, demo, r
       <div class="mb-16 flex flex-col">
         <h2>Enlaces</h2>
         <div class="flex justify-center flex-wrap gap-x-2 gap-y-1">
-          <a 
-          href={demo} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="px-6 h-12 flex flex-none items-center justify-center text-white/75 gap-2 rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
-            <i class="fa-solid fa-globe"></i>
+          <Link href={demo} target="_blank" style="text">
+            <i class="fa-solid fa-earth-americas"></i>
             <span>Visitar pagina web</span>
-          </a>
-          <a 
-          href={repository} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="px-6 h-12 flex flex-none items-center justify-center text-white/75 gap-2 rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
+          </Link>
+          <Link href={repository} target="_blank" style="text">
             <i class="fa-brands fa-github"></i>
             <span>Ver repositorio</span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
