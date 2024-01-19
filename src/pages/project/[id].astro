@@ -10,15 +10,11 @@ export const getStaticPaths = async () => {
   }));
 }
 
-const {project: {id, name, images, subtitle, description,process,stacks, demo, repository}} = Astro.props
+const {project: {name, images, subtitle, description,process,stacks, demo, repository}} = Astro.props
 
 ---
 <Layout title="Rodrigo Ruiz Diaz" description="">
   <main>
-    <!-- <a href="/#proyectos" class="fixed top-4 left-4 px-6 h-12 flex flex-none items-center justify-center text-white/75 gap-2 rounded-full bg-slate-950 border border-slate-800 duration-150 hover:text-white hover:scale-105">
-      <i class="fa-solid fa-arrow-left"></i>
-      <span class="text-base">Volver</span>
-    </a> -->
     <Link href='/#proyectos' style="back">
       <i class="fa-solid fa-arrow-left"></i>
       <span>Volver</span>
