@@ -90,7 +90,7 @@ const {project: {id, name, images, subtitle, description,process,stacks, demo, r
     @apply text-white/90 text-center last:mt-4 last:text-sm last:text-white/75
   }
   .swiper-slide {
-    @apply w-auto h-96 object-cover object-top
+    @apply h-auto object-cover object-top
   }
 </style>
 <script>
@@ -109,7 +109,7 @@ const swiper = new Swiper(".swiper", {
     clickable: true,
   },
   breakpoints: {
-    640: { slidesPerView: 'auto'},
+    640: { slidesPerView: 2},
   },
 })
 </script>
