@@ -23,8 +23,8 @@ const { title, description } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<div class="bg-cyan-700 absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem]"></div>
-    <div class="bg-cyan-700 absolute bottom-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem]"></div>
+		<!-- <div class="bg-cyan-700 absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem]"></div>
+    <div class="bg-cyan-700 absolute bottom-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem]"></div> -->
 		<slot />
 		<Footer />
 		<DarkModeBtn />
@@ -36,7 +36,7 @@ const { title, description } = Astro.props;
 	}
 	body {
 		font-family: 'Onest Variable', sans-serif;
-		@apply relative bg-slate-200 text-slate-900 dark:bg-slate-900 dark:text-slate-100
+		@apply bg-slate-200 text-slate-800 dark:bg-slate-900 dark:text-slate-200
 	}
 	main {
 		@apply max-w-screen-md min-h-screen mx-auto flex flex-col
@@ -56,4 +56,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 window.addEventListener('load', () => AOS.init({easing: 'ease-in-out'}))
+
+if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+	document.documentElement.classList.add('dark');
+} else {
+	document.documentElement.classList.remove('dark');
+}
 </script>
