@@ -1,6 +1,7 @@
 ---
 import '@fontsource-variable/onest';
 import Footer from '../components/Footer.astro';
+import DarkModeBtn from '../components/DarkModeBtn.astro';
 
 interface Props {
 	title: string;
@@ -26,6 +27,7 @@ const { title, description } = Astro.props;
     <div class="bg-cyan-700 absolute bottom-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem]"></div>
 		<slot />
 		<Footer />
+		<DarkModeBtn />
 	</body>
 </html>
 <style is:global>
@@ -34,7 +36,7 @@ const { title, description } = Astro.props;
 	}
 	body {
 		font-family: 'Onest Variable', sans-serif;
-		@apply relative bg-slate-900 text-white
+		@apply relative bg-slate-200 text-slate-900 dark:bg-slate-900 dark:text-slate-100
 	}
 	main {
 		@apply max-w-screen-md min-h-screen mx-auto flex flex-col
