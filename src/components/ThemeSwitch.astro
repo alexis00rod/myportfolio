@@ -1,0 +1,39 @@
+<button 
+  id="themeSwitch"
+  class="fixed bottom-4 right-4 z-20 size-12 flex justify-center items-center text-slate-800/75 dark:text-slate-200/75 bg-slate-50 dark:bg-slate-950 border-2 border-slate-300 dark:border-slate-700 rounded-full duration-150 hover:text-slate-800 dark:hover:text-slate-200 hover:scale-105">
+  <i></i>
+</button>
+<script>
+const themeSwitchBtn = document.querySelector('#themeSwitch');
+const themeSwitchIcon = document.querySelector('#themeSwitch i');
+    
+    // Obtén el elemento <i> por su ID
+    const themeIcon = document.getElementById('themeIcon');
+    function toggleTheme() {
+  if (localStorage.theme === 'dark') {
+    localStorage.theme = 'light';
+    document.documentElement.classList.remove('dark');
+  } else {
+    localStorage.theme = 'dark';
+    document.documentElement.classList.add('dark');
+  }
+}
+
+    // Agrega un evento clic al botón para llamar a la función toggleTheme y updateThemeIcon
+    themeSwitchBtn.addEventListener('click', function() {
+      toggleTheme();
+      updateThemeIcon(); // Llama a la función para actualizar el icono después de cambiar el tema
+    });
+
+    // Función para actualizar el icono según el tema actual
+    function updateThemeIcon() {
+      // Obtén el tema actual del localStorage o usa el tema preferido por el sistema
+      const currentTheme = localStorage.theme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+      // Cambia la clase del icono de Font Awesome según el tema actual
+      themeSwitchIcon.className = currentTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+
+    // Llama a la función updateThemeIcon al cargar la página
+    updateThemeIcon();
+</script>
