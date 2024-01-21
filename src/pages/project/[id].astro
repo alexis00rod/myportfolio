@@ -41,7 +41,7 @@ const {project: {name, images, subtitle, description,process,stacks, demo, repos
       <div class="mb-16 flex flex-col">
         <h2>Tecnologias</h2>
         <ul class="flex justify-center flex-wrap gap-x-2 gap-y-1">
-          {stacks && stacks.map(stack => <li class="px-6 py-3 flex items-center text-lg rounded-xl  bg-slate-50 dark:bg-slate-950 border-2 border-slate-300 dark:border-slate-700">{stack}</li>)}
+          {stacks && stacks.map(stack => <li class="px-6 py-3 flex items-center text-lg rounded-xl bg-slate-950 border-2 border-slate-700 capitalize">{stack}</li>)}
         </ul>
       </div>
       <div class="mb-16 flex flex-col">
@@ -71,16 +71,16 @@ const {project: {name, images, subtitle, description,process,stacks, demo, repos
     @apply text-center
   }
   h1 {
-    @apply py-2 mb-20 text-5xl font-bold
+    @apply mt-4 mb-16 text-5xl font-bold
   }
   h2 {
     @apply mb-8 text-3xl font-medium capitalize text-center
   }
   h3 {
-    @apply mb-8 text-slate-800/75 dark:text-slate-200/75 text-lg
+    @apply mb-8 text-slate-200/75 text-lg
   }
   p {
-    @apply text-slate-800/90 dark:text-slate-200/90 text-center last:mt-4 last:text-sm last:text-slate-800/75 last:dark:text-slate-200/75
+    @apply text-slate-200/90 text-center last:mt-4 last:text-sm last:text-slate-200/75
   }
   .swiper-slide {
     @apply h-auto object-cover object-top

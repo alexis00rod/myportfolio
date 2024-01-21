@@ -10,16 +10,16 @@ import { isEven } from "../data/utils"
     data-aos="zoom-in-up" 
     class={`relative w-full sm:h-80 mb-3 sm:mb-8 last:mb-0
       flex ${isEven(i) ? 'flex-row' : 'flex-row-reverse'} 
-      bg-slate-50 dark:bg-slate-950 rounded-lg border-2 border-slate-300 dark:border-slate-700 overflow-hidden
+    bg-slate-950 rounded-lg border-2 border-slate-700 overflow-hidden
     `}
     >
       <div class={`sm:max-w-[50%] h-full flex flex-col pt-4 pb-7 px-5 sm:pt-10
         ${isEven(i) ? 'sm:pl-10 sm:pr-2' : 'sm:pr-10 sm:pl-2'}
         `}>
         <h3 class="text-2xl font-semibold">{project.name}</h3>
-        <p class="mt-2 text-slate-800/75 dark:text-slate-200/75 line-clamp-3">{project.subtitle}</p>
+        <p class="mt-2 text-slate-200/75 line-clamp-3">{project.subtitle}</p>
         <ul class="mt-4 sm:mt-auto flex flex-wrap gap-x-2 gap-y-1">
-          {project.stacks.map(stack => <li class="px-3 py-1 bg-slate-300 dark:bg-slate-700 text-xs uppercase rounded-full">{stack}</li>)}
+          {project.stacks.map(stack => <li class="px-3 py-1 bg-slate-700 text-xs uppercase rounded-full">{stack}</li>)}
         </ul>
       </div>
       <img 
