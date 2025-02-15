@@ -15,4 +15,5 @@ export const SKILLS = [
   "Python",
   "ChakraUI",
   "SheetJS",
+  "ElectronJS",
 ];
